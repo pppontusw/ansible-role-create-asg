@@ -1,0 +1,16 @@
+- ec2_asg:
+    name: "{{app_name}}_asg"
+    load_balancers: '{{asg_loadbalancer}}'
+    launch_config_name: "{{app_name}}-{{ ansible_date_time.iso8601 | regex_replace('[^a-zA-Z0-9]', '-') }}"
+    region: "{{asg_region}}"
+    min_size: 1
+    max_size: 2
+    desired_capacity: 1
+    vpc_zone_identifier: [ '{{asg_subnet}}' ]
+    replace_all_instances: yes
+    tags:
+      - Name: "{{app_name}}-asg"
+  register: asg
+
+- debug:
+    msg: "{{asg}}"
