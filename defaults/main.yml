@@ -3,4 +3,4 @@ asg_subnet:
   - "{{ec2_subnet}}"
 asg_region: "{{ec2_region}}"
 asg_loadbalancer: ["{{elb.elb.name}}"]
-asg_launchconfig: "{{app_name}}-{{ ansible_date_time.iso8601 | regex_replace('[^a-zA-Z0-9]', '-') }}"
+asg_launchconfig: "{{lc.result.name}}"
