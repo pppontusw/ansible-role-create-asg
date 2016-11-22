@@ -6,9 +6,7 @@
     min_size: 1
     max_size: 2
     desired_capacity: 1
-    vpc_zone_identifier: 
-        - '{{item}}'
-    with_items: '{{asg_subnet}}'
+    vpc_zone_identifier: '{{asg_subnet}}'
     replace_all_instances: yes
     tags:
       - Name: "{{app_name}}-asg"
