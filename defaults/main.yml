@@ -1,4 +1,5 @@
 app_name: Test
-asg_subnet: "{{ec2_subnet}}"
+asg_subnet: 
+  - "{{ec2_subnet}}"
 asg_region: "{{ec2_region}}"
 asg_loadbalancer: ["{{elb.elb.name}}"]
