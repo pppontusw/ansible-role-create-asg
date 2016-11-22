@@ -1,7 +1,7 @@
 - ec2_asg:
     name: "{{app_name}}_asg"
     load_balancers: '{{asg_loadbalancer}}'
-    launch_config_name: "{{app_name}}-{{ ansible_date_time.iso8601 | regex_replace('[^a-zA-Z0-9]', '-') }}"
+    launch_config_name: "{{asg_launchconfig}}"
     region: "{{asg_region}}"
     min_size: 1
     max_size: 2
