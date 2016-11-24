@@ -13,3 +13,5 @@ asg_tags:
 
 asg_name_tag:
   - Name: "{{app_name}}-asg"
+
+asg_health_check_type: EC2
