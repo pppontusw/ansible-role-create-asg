@@ -9,7 +9,7 @@
     vpc_zone_identifier: '{{asg_subnet}}'
     replace_all_instances: yes
     tags: "{{asg_tags|default([]) + asg_name_tag}}"
-    health_check_type: "{{asg_health_check_type)}}"
+    health_check_type: "{{asg_health_check_type}}"
   register: asg
 
 - debug:
