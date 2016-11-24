@@ -8,8 +8,7 @@
     desired_capacity: 1
     vpc_zone_identifier: '{{asg_subnet}}'
     replace_all_instances: yes
-    tags:
-      - Name: "{{app_name}}-asg"
+    tags: "{{asg_tags|default([]) + asg_name_tag}}"
   register: asg
 
 - debug:
