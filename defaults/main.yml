@@ -4,3 +4,14 @@ asg_subnet:
 asg_region: "{{ec2_region}}"
 asg_loadbalancer: ["{{elb.elb.name}}"]
 asg_launchconfig: "{{lc.result.name}}"
+asg_min_size: 1
+asg_max_size: 2
+asg_desired_capacity: 1
+
+asg_tags:
+  - type: autoscaling
+
+asg_name_tag:
+  - Name: "{{app_name}}-asg"
+
+asg_health_check_type: EC2
