@@ -15,3 +15,6 @@ asg_name_tag:
   - Name: "{{app_name}}-asg"
 
 asg_health_check_type: EC2
+
+asg_wait_for_instances: yes
+asg_wait_timeout: 300
